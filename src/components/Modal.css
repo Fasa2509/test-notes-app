@@ -1,0 +1,51 @@
+.modal__window {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 1100;
+    top: 0;
+    left: 0;
+    background-color: #000000b6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__content {
+    position: relative;
+    overflow: hidden auto;
+    min-width: 320px;
+    min-height: 5rem;
+    max-width: 70%;
+    max-height: 80%;
+    background-color: white;
+    border-radius: .5rem;
+    padding: 1.2rem;
+    text-align: center;
+}
+
+.modal__title {
+    margin: 0;
+    width: 90%;
+    text-align: left;
+}
+
+.modal__separator {
+    background-color: rgba(0, 0, 0, 0.432);
+    margin: 1.2rem 0;
+    width: 100%;
+}
+
+.modal__close__button {
+    width: 1.7rem;
+    height: 1.7rem;
+    text-align: center;
+    border: none;
+    border-radius: 50%;
+    color: #FFF;
+    background-color: rgb(40, 115, 255);
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}

@@ -1,0 +1,30 @@
+.form__field--hashtags {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.form__field--hashtags > span {
+    align-self: flex-start;
+}
+
+#public__div {
+    text-align: left;
+}
+
+.form__field #public {
+    width: initial;
+}
+
+.form__field input[type="file"] {
+    border: none;
+}
+
+.form__submit {
+    margin: 0 1rem;
+}
+
+.form__hashtag {
+    display: inline-block;
+    margin: 0 .2rem;
+}

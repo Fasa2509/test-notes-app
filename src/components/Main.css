@@ -1,0 +1,26 @@
+.main {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.main__info {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.main__welcome {
+    flex-basis: 250px;
+    flex-shrink: 1;
+    flex-grow: 2;
+    display: flex;
+    align-items: center;
+}
+
+.main > .note__form {
+    flex-grow: 4;
+    flex-shrink: 1;
+}

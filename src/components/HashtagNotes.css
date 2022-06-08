@@ -1,0 +1,31 @@
+.section__title {
+    margin-top: 7rem;
+}
+
+h3, h4, p {
+    text-align: center;
+}
+
+.button__container {
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+    flex-wrap: wrap;
+    align-content: space-around;
+    margin: 2rem;
+}
+
+.button__hashtag {
+    border: none;
+    transition: transform 150ms ease;
+}
+
+.button__hashtag--active {
+    transform: scale(1.2);
+}
+
+@media (hover: hover) {
+    .button__hashtag:hover {
+        transform: scale(1.2);
+    }
+}

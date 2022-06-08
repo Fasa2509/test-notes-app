@@ -1,0 +1,203 @@
+:root {
+    --menu-height: 4rem;
+    --tag-height: 30px;
+    --wing--margin: 4px;
+    --routes-position: -2rem;
+    --routes-height: calc(var(--menu-height) / 1.5);
+    --routes-tag-width: 2rem;
+}
+
+.menu__container,
+.menu {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+.menu {
+    display: flex;
+    border-bottom: thin solid black;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6vw;
+    background-color: #FFF;
+    height: var(--menu-height);
+    transition: top 1s ease;
+}
+
+.menu > * {
+    min-width: max-content;
+}
+
+.menu__tag {
+    width: 18px;
+    height: var(--tag-height);
+    border: thin solid #000;
+    border-top: transparent;
+    border-end-end-radius: 1rem;
+    border-end-start-radius: 1rem;
+    background-color: #FFF;
+    position: absolute;
+    z-index: 1000;
+    top: calc(var(--menu-height) - 1px);
+    right: 10vw;
+    transition: top 1s ease;
+}
+
+.menu__tag::before,
+.menu__tag::after {
+    content: '';
+    display: block;
+    width: 3px;
+    height: 10px;
+    background-color: #000;
+    border-radius: 3px;
+    position: absolute;
+    top: 14px;
+    transition: transform 450ms ease;
+}
+
+.menu__tag::before {
+    transform: rotate(45deg);
+    left: var(--wing--margin);
+}
+
+.menu__tag::after {
+    transform: rotate(-45deg);
+    right: var(--wing--margin);
+}
+
+.menu__checkbox:checked + .menu__tag::before {
+    transform: rotate(135deg);
+    top: 16px;
+}
+
+.menu__checkbox:checked + .menu__tag::after {
+    transform: rotate(-135deg);
+    top: 16px;
+}
+
+.menu__checkbox {
+    cursor: pointer;
+    position: absolute;
+    z-index: 1001;
+    opacity: 0;
+    top: calc(var(--menu-height) + var(--tag-height) - 16px);
+    right: 10vw;
+}
+
+.menu__checkbox:checked {
+    top: 23px;
+}
+
+.menu__checkbox:checked + .menu__tag {
+    top: 7px;
+}
+
+.menu__checkbox:checked ~ .routes__container {
+    top: 8px;
+}
+
+.menu__checkbox:checked ~ .menu {
+    top: calc(8px - var(--menu-height));
+}
+
+.menu__button {
+    display: flex;
+    align-items: center;
+}
+
+.routes__container {
+    position: absolute;
+    top: var(--menu-height);
+    z-index: 999;
+    transition: transform 1s ease, top 1s ease;
+}
+
+.routes {
+    display: flex;
+    height: var(--routes-height);
+    background-color: rgb(61, 123, 255);
+}
+
+.routes__tag {
+    width: var(--routes-tag-width);
+    height: var(--routes-height);
+    background-color: rgb(61, 123, 255);
+    border-end-end-radius: calc(var(--routes-height) / 2);
+    border-start-end-radius: calc(var(--routes-height) / 2);
+    position: absolute;
+    right: calc( -1 * var(--routes-tag-width));
+}
+
+.routes__tag::before,
+.routes__tag::after {
+    content: '';
+    display: block;
+    width: calc(1rem / 4);
+    height: 1rem;
+    background-color: #000;
+    border-radius: 5px;
+    position: absolute;
+    right: calc(var(--routes-tag-width) - 1rem);
+    transition: transform 450ms ease;
+}
+
+.routes__tag::before {
+    transform: rotate(45deg);
+    bottom: calc(var(--routes-tag-width) - .9rem);
+}
+
+.routes__checkbox:checked + .routes__tag::before {
+    transform: rotate(-45deg);
+}
+
+.routes__tag::after {
+    transform: rotate(-45deg);
+    top: calc(var(--routes-tag-width) - .9rem);
+}
+
+.routes__checkbox:checked + .routes__tag::after {
+    transform: rotate(45deg);
+}
+
+.routes__checkbox {
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    top: calc(var(--routes-height) / 3);
+    right: calc(var(--routes-tag-width) - 3.5rem);
+    z-index: 1000;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.routes__button {
+    background-color: transparent;
+    border: none;
+    color: #FFF;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 500ms ease;
+}
+
+.routes__button--active {
+    color:#000;
+    pointer-events: none;
+}
+
+/* esta parte ya aplica programacion! */
+.routes__container--hidden {
+    transform: translateX(-100%);
+}
+
+.routes__container--visible {
+    transform: translateX(0);
+}
+
+@media (hover: hover) {
+    .routes__button:hover {
+        color: #000;
+    }
+}

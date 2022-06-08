@@ -1,0 +1,97 @@
+.note__container {
+    min-width: 230px;
+    width: 75%;
+    margin: 0 auto 3rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    border: thin solid #000;
+    border-radius: 1rem;
+    background-color: rgb(238, 238, 238);
+}
+
+.note__container--no-hashtag {
+    margin-top: 7rem;
+}
+
+.note__container > h2 {
+    text-align: center;
+}
+
+.note__item {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: rgb(250, 250, 250);
+    border: thin solid #000;
+    border-radius: 1rem;
+    transition: box-shadow 250ms ease;
+}
+
+.note__title {
+    margin: 0;
+    text-align: left;
+}
+
+.note__info {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-end;
+}
+
+.note__info > * {
+    margin: 0 auto;
+}
+
+.note__tags {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.note__hashtags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+.note__date {
+    margin: .4rem 0;
+}
+
+.note__action {
+    background-color: transparent;
+    text-decoration: none;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 150ms ease;
+}
+
+@media (hover: hover) {
+    .note__item:hover {
+        box-shadow: 0px 7px 10px;
+    }
+
+    .note__action:hover {
+        color: #3d7aff;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .note__item {
+        flex-direction: column;
+    }
+
+    .note__title {
+        margin-bottom: 1rem;
+    }
+
+    .note__info {
+        flex-direction: row;
+    }
+}
